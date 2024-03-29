@@ -98,6 +98,9 @@ class _HomeScreenState extends State<HomeScreen>
               ],
             ),
           ),
+
+          const DraggableWeatherWidget(),
+
           Positioned(
             // floating button background
             left: 0,
@@ -106,14 +109,13 @@ class _HomeScreenState extends State<HomeScreen>
             child: SvgPicture.asset("assets/svg/Back.svg", width: 400.w),
           ),
 
-          const DraggableWeatherWidget(),
-
           Positioned(
-              // buttons background
-              left: 0,
-              right: 0,
-              bottom: -10,
-              child: SvgPicture.asset("assets/svg/Subtract.svg")),
+            // buttons background
+            left: 0,
+            right: 0,
+            bottom: -10,
+            child: SvgPicture.asset("assets/svg/Subtract.svg"),
+          ),
 
           Positioned(
             left: 0,
