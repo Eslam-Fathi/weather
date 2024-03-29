@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:weather/View/Components/bottom_buttons.dart';
+import 'package:weather/View/Components/draggable_weather_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -97,6 +99,8 @@ class _HomeScreenState extends State<HomeScreen>
             ),
           ),
 
+          const DraggableWeatherWidget(),
+
           Positioned(
             // floating button background
             left: 0,
@@ -113,12 +117,26 @@ class _HomeScreenState extends State<HomeScreen>
             child: SvgPicture.asset("assets/svg/Subtract.svg"),
           ),
 
-          //TODO: implement buttons' functions here
-
-          const Positioned(
-              left: 0, right: 300, bottom: 20, child: Placeholder()),
-          const Positioned(
-              left: 300, right: 0, bottom: 20, child: Placeholder()),
+          Positioned(
+            left: 0,
+            right: 300,
+            bottom: 20,
+            child: BottomButton(
+              // location button
+              iconlink: "assets/svg/svgicon/Symbol.svg",
+              onTap: () {},
+            ),
+          ),
+          Positioned(
+            left: 300,
+            right: 0,
+            bottom: 20,
+            child: BottomButton(
+              // List button
+              iconlink: "assets/svg/svgicon/list.svg",
+              onTap: () {},
+            ),
+          ),
         ],
       ),
     );
