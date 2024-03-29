@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather/View/Components/purple_colored_box.dart';
+import 'package:weather/View/Widgets/air_quality_widget.dart';
+import 'package:weather/View/Widgets/feels_like_widget.dart';
+import 'package:weather/View/Widgets/humidity_widget.dart';
+import 'package:weather/View/Widgets/pressure_widget.dart';
+import 'package:weather/View/Widgets/rain_fall_widget.dart';
+import 'package:weather/View/Widgets/sunrise_widget.dart';
+import 'package:weather/View/Widgets/uv_index_widget.dart';
+import 'package:weather/View/Widgets/visibilty_widget.dart';
 import 'package:weather/View/Widgets/weather_small_widget.dart';
+import 'package:weather/View/Widgets/windspeed_widget.dart';
 
 class DraggableContent extends StatefulWidget {
   const DraggableContent({
@@ -217,7 +226,9 @@ class _DraggableContentState extends State<DraggableContent>
           const PurpleBox(
             height: 158,
             width: 342,
-            child: SizedBox(),
+            child: AirQualityWidget(
+              selectedaAirQualityIndex: 2,
+            ),
           ),
           SizedBox(
             height: 10.h,
@@ -230,7 +241,9 @@ class _DraggableContentState extends State<DraggableContent>
                 const PurpleBox(
                   height: 164,
                   width: 164,
-                  child: SizedBox(),
+                  child: UVIndex(
+                    selectedaUVIndex: 2,
+                  ),
                 ),
                 SizedBox(
                   width: 10.w,
@@ -239,7 +252,9 @@ class _DraggableContentState extends State<DraggableContent>
                 const PurpleBox(
                   height: 164,
                   width: 164,
-                  child: SizedBox(),
+                  child: SunRise(
+                    sunRiseTime: '05:06 AM',
+                  ),
                 ),
               ],
             ),
@@ -255,7 +270,7 @@ class _DraggableContentState extends State<DraggableContent>
                 const PurpleBox(
                   height: 164,
                   width: 164,
-                  child: SizedBox(),
+                  child: WindSpeed(),
                 ),
                 SizedBox(
                   width: 10.w,
@@ -264,7 +279,10 @@ class _DraggableContentState extends State<DraggableContent>
                 const PurpleBox(
                   height: 164,
                   width: 164,
-                  child: SizedBox(),
+                  child: RainFall(
+                    rainFallChance: 1,
+                    willItRain: 1,
+                  ),
                 ),
               ],
             ),
@@ -277,7 +295,14 @@ class _DraggableContentState extends State<DraggableContent>
             child: Row(
               children: [
                 //* FeelsLike Widget
-                const PurpleBox(height: 164, width: 164, child: SizedBox()),
+                const PurpleBox(
+                  height: 164,
+                  width: 164,
+                  child: FeelsLike(
+                    feelsLike: '20',
+                    feelsLikeState: '',
+                  ),
+                ),
                 SizedBox(
                   width: 10.w,
                 ),
@@ -285,7 +310,10 @@ class _DraggableContentState extends State<DraggableContent>
                 const PurpleBox(
                   height: 164,
                   width: 164,
-                  child: SizedBox(),
+                  child: Humidity(
+                    humidityFigure: '20',
+                    dewPoint: '20',
+                  ),
                 ),
               ],
             ),
@@ -301,7 +329,9 @@ class _DraggableContentState extends State<DraggableContent>
                 const PurpleBox(
                   height: 164,
                   width: 164,
-                  child: SizedBox(),
+                  child: VisiblityWidget(
+                    visabilityFigure: 10,
+                  ),
                 ),
                 SizedBox(
                   width: 10.w,
@@ -310,7 +340,9 @@ class _DraggableContentState extends State<DraggableContent>
                 const PurpleBox(
                   height: 164,
                   width: 164,
-                  child: SizedBox(),
+                  child: Pressure(
+                    pressure: 25,
+                  ),
                 ),
               ],
             ),
